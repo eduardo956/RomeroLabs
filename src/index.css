@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    overscroll-behavior: none;
+    background-color: #070a0b;
+    font-family: 'Geist', sans-serif;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070a0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a2829;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0d4;
+}
+
+/* Glows & Cybernetic Accents */
+.hero-glow-radial {
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 240, 212, 0.16) 0%, rgba(0, 196, 201, 0.05) 45%, transparent 75%);
+}
+.neon-border-glow {
+  box-shadow: 0 0 0 1px rgba(0, 240, 212, 0.25), 0 0 35px -5px rgba(0, 240, 212, 0.25);
+}
+.neon-box-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neon-box-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(0, 240, 212, 0.4), 0 14px 40px -10px rgba(0, 240, 212, 0.22);
+}
+
+.cyber-grid {
+  background-image: linear-gradient(to right, rgba(0, 240, 212, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 240, 212, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@keyframes pulseCta {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 240, 212, 0.4), 0 0 45px rgba(0, 240, 212, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 240, 212, 0.7), 0 0 70px rgba(0, 240, 212, 0.35);
+    transform: scale(1.015);
+  }
+}
+.animate-cta-glow {
+  animation: pulseCta 2.8s ease-in-out infinite;
+}
+
+@keyframes floatMockup {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.4deg); }
+}
+.animate-mockup-float {
+  animation: floatMockup 5.5s ease-in-out infinite;
+}
+
+/* Infinite Marquee Animation (Right to Left) */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
