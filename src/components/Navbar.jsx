@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
-import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { ShoppingCart, Menu, X, Rocket } from 'lucide-react';
-import { whatsappConfig } from '../config/whatsappConfig';
 
 export const Navbar = () => {
   const { totalItems, setIsCartOpen } = useCart();
@@ -96,17 +94,13 @@ export const Navbar = () => {
             )}
           </button>
 
-          {/* WhatsApp Direct CTA */}
+          {/* Action CTA */}
           <a
-            href={`https://wa.me/${whatsappConfig.phoneNumber}?text=${encodeURIComponent(
-              whatsappConfig.defaultMessage
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#planes"
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-[#00f0d4] to-[#42e0e5] text-[#003b34] font-label-md text-xs md:text-sm font-bold rounded-xl hover:shadow-[0_0_20px_rgba(0,240,212,0.4)] transition-all transform hover:-translate-y-0.5"
           >
-            <WhatsAppIcon className="w-4 h-4 fill-current" />
-            <span>Cotizar por WhatsApp</span>
+            <Rocket className="w-4 h-4" />
+            <span>Ver Planes Web</span>
           </a>
 
           {/* Mobile Menu Toggle */}
@@ -139,34 +133,31 @@ export const Navbar = () => {
           <a
             href="#como-funciona"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="font-label-md text-base text-white hover:text-[#00f0d4]"
+            className="font-label-md text-base text-[#9cb2ad] hover:text-[#00f0d4]"
           >
             Metodología
           </a>
           <a
             href="#garantia"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="font-label-md text-base text-white hover:text-[#00f0d4]"
+            className="font-label-md text-base text-[#9cb2ad] hover:text-[#00f0d4]"
           >
             Garantía 0% Riesgo
           </a>
           <a
             href="#faq"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="font-label-md text-base text-white hover:text-[#00f0d4]"
+            className="font-label-md text-base text-[#9cb2ad] hover:text-[#00f0d4]"
           >
             FAQ
           </a>
           <a
-            href={`https://wa.me/${whatsappConfig.phoneNumber}?text=${encodeURIComponent(
-              whatsappConfig.defaultMessage
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#planes"
+            onClick={() => setIsMobileMenuOpen(false)}
             className="mt-2 flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-[#00f0d4] to-[#42e0e5] text-[#003b34] font-label-md text-sm font-bold rounded-xl"
           >
-            <WhatsAppIcon className="w-5 h-5 fill-current" />
-            <span>Hablar por WhatsApp</span>
+            <Rocket className="w-5 h-5" />
+            <span>Ver Planes Web</span>
           </a>
         </div>
       )}

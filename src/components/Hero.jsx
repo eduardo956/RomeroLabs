@@ -1,12 +1,112 @@
-import React from 'react';
-import { Rocket, ArrowRight, Check, Lock, Smartphone, Store, MessageSquare, ExternalLink, Shield, Zap } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { Rocket, ArrowRight, Check, Lock, Smartphone, Store, ExternalLink } from 'lucide-react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Hero = () => {
+  const heroRef = useRef(null);
+  const mockupRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 768px)", () => {
+        // Hero Elements Scroll Parallax Layers
+        gsap.to('.parallax-hero-badge', {
+          y: -25,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.5,
+          },
+        });
+
+        gsap.to('.parallax-hero-title', {
+          y: -35,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.7,
+          },
+        });
+
+        gsap.to('.parallax-hero-showcase', {
+          y: -60,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        });
+
+        // Floating WhatsApp Order Alert (Faster Layer for depth)
+        gsap.to('.parallax-hero-alert', {
+          y: -110,
+          scale: 1.03,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1.4,
+          },
+        });
+      });
+
+      // Mouse Parallax / 3D Tilt on Desktop Mockup
+      const mockup = mockupRef.current;
+      if (mockup && window.innerWidth >= 1024) {
+        const handleMouseMove = (e) => {
+          const rect = mockup.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          gsap.to(mockup, {
+            rotateY: x * 0.02,
+            rotateX: -y * 0.02,
+            duration: 0.6,
+            ease: 'power2.out',
+            transformPerspective: 1000,
+          });
+        };
+
+        const handleMouseLeave = () => {
+          gsap.to(mockup, {
+            rotateY: 0,
+            rotateX: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+          });
+        };
+
+        const container = mockup.parentElement;
+        container.addEventListener('mousemove', handleMouseMove);
+        container.addEventListener('mouseleave', handleMouseLeave);
+
+        return () => {
+          container.removeEventListener('mousemove', handleMouseMove);
+          container.removeEventListener('mouseleave', handleMouseLeave);
+        };
+      }
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative w-full max-w-[1280px] mx-auto px-5 md:px-12 pt-12 md:pt-16 pb-16 flex flex-col items-center text-center">
+    <section ref={heroRef} className="relative w-full max-w-[1280px] mx-auto px-5 md:px-12 pt-12 md:pt-16 pb-16 flex flex-col items-center text-center">
       {/* Real-time Status Badge */}
-      <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#162022]/90 border border-[#00f0d4]/30 backdrop-blur-md shadow-[0_0_15px_rgba(0,240,212,0.15)] mb-8">
+      <div className="parallax-hero-badge inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#162022]/90 border border-[#00f0d4]/30 backdrop-blur-md shadow-[0_0_15px_rgba(0,240,212,0.15)] mb-8">
         <span className="relative flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f0d4] opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00f0d4]"></span>
@@ -17,7 +117,7 @@ export const Hero = () => {
       </div>
 
       {/* Main Headline */}
-      <h1 className="font-display-hero text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-extrabold text-[#e6edf0] max-w-5xl tracking-tight leading-[1.12] mb-6">
+      <h1 className="parallax-hero-title font-display-hero text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-extrabold text-[#e6edf0] max-w-5xl tracking-tight leading-[1.12] mb-6">
         Tu Negocio Necesita Clientes, No Solo Seguidores. <br className="hidden md:block" />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#bffff0] to-[#00f0d4] drop-shadow-[0_0_35px_rgba(0,240,212,0.35)]">
           Creamos Páginas Web Que Venden.
@@ -30,7 +130,7 @@ export const Hero = () => {
       </p>
 
       {/* Conversion CTA Buttons */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mb-12">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mb-12 z-10">
         <a
           href="#planes"
           className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4.5 bg-gradient-to-r from-[#00f0d4] via-[#18ebd0] to-[#42e0e5] text-[#003b34] font-headline-sm text-base md:text-lg font-extrabold rounded-xl transition-all transform hover:-translate-y-1 hover:brightness-110 animate-cta-glow cursor-pointer"
@@ -72,12 +172,16 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* High-Tech Desktop Showcase Container (Cleaned, Integrated Floating Card) */}
-      <div className="w-full max-w-5xl relative group">
+      {/* High-Tech Desktop Showcase Container with Parallax & 3D Tilt */}
+      <div id="showcase" className="parallax-hero-showcase w-full max-w-5xl relative group perspective-1000">
         {/* Glow backdrop */}
         <div className="absolute -inset-1 bg-gradient-to-r from-[#00f0d4]/20 via-[#42e0e5]/15 to-[#00f0d4]/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity"></div>
         
-        <div className="relative w-full rounded-2xl bg-[#090e10] border border-[#00f0d4]/30 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden">
+        <div
+          ref={mockupRef}
+          className="relative w-full rounded-2xl bg-[#090e10] border border-[#00f0d4]/30 shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden transition-transform ease-out"
+          style={{ transformStyle: 'preserve-3d' }}
+        >
           {/* Top Browser Bar */}
           <div className="h-11 bg-[#0e1619] border-b border-[#223334]/40 px-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -157,16 +261,16 @@ export const Hero = () => {
                   <span>Pedir directo por WhatsApp</span>
                 </div>
 
-                {/* Embedded Inline WhatsApp Sales Toast (Clean, aligned inside card) */}
-                <div className="bg-[#162022]/90 border border-[#00f0d4]/40 p-2.5 rounded-xl shadow-md flex items-start gap-2.5 text-left">
-                  <div className="w-6 h-6 rounded-full bg-emerald-500 text-black flex items-center justify-center shrink-0 mt-0.5">
-                    <WhatsAppIcon className="w-3.5 h-3.5 fill-current" />
+                {/* Embedded Inline WhatsApp Sales Toast (Parallax Floating layer) */}
+                <div className="parallax-hero-alert bg-[#162022]/95 border border-[#00f0d4]/50 p-3 rounded-xl shadow-[0_10px_30px_rgba(0,240,212,0.2)] flex items-start gap-2.5 text-left transform transition-transform">
+                  <div className="w-7 h-7 rounded-full bg-emerald-500 text-black flex items-center justify-center shrink-0 mt-0.5 shadow-[0_0_10px_rgba(16,185,129,0.5)]">
+                    <WhatsAppIcon className="w-4 h-4 fill-current" />
                   </div>
                   <div>
                     <div className="font-label-sm text-[11px] font-bold text-white flex items-center gap-1">
                       ¡Nueva venta recibida! <span className="text-[#00f0d4]">+S/ 180</span>
                     </div>
-                    <div className="font-body-sm text-[10px] text-[#9cb2ad] leading-tight">
+                    <div className="font-body-sm text-[10px] text-[#9cb2ad] leading-tight mt-0.5">
                       "Hola, quiero confirmar el pedido del catálogo. Ya transferí por Yape..."
                     </div>
                   </div>

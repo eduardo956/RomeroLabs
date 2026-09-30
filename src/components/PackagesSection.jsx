@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { packages } from '../data/packages';
-import { CheckCircle2, Zap, ArrowRight, ShoppingCart } from 'lucide-react';
+import { CheckCircle2, Zap, ArrowRight } from 'lucide-react';
 import { whatsappConfig } from '../config/whatsappConfig';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const PackagesSection = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 1024px)", () => {
+        // Staggered vertical depth parallax for packages cards
+        const cards = gsap.utils.toArray('.package-card-parallax');
+        cards.forEach((card, index) => {
+          const depthOffset = (index % 2 === 0 ? 35 : -25);
+          gsap.fromTo(
+            card,
+            { y: depthOffset },
+            {
+              y: -depthOffset,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.2,
+              },
+            }
+          );
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="w-full py-28 max-w-[1280px] mx-auto px-5 md:px-12" id="planes">
+    <section ref={sectionRef} className="w-full py-28 max-w-[1280px] mx-auto px-5 md:px-12 relative z-10" id="planes">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <span className="font-label-sm text-xs md:text-sm text-[#bffff0] uppercase tracking-widest font-bold">
           PLANES ACCESIBLES SIN LETRAS CHICAS
@@ -22,9 +58,9 @@ export const PackagesSection = () => {
         {packages.map((pkg) => (
           <div
             key={pkg.id}
-            className={`bg-[#0c1315] rounded-2xl p-7 md:p-8 flex flex-col justify-between relative transition-all duration-300 ${
+            className={`package-card-parallax bg-[#0c1315] rounded-2xl p-7 md:p-8 flex flex-col justify-between relative transition-all duration-300 ${
               pkg.isPopular
-                ? 'border-2 border-[#00f0d4] shadow-[0_0_35px_rgba(0,240,212,0.25)]'
+                ? 'border-2 border-[#00f0d4] shadow-[0_0_35px_rgba(0,240,212,0.25)] z-10'
                 : 'border border-[#223334]/60 hover:border-[#223334]'
             }`}
           >

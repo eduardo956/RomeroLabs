@@ -1,7 +1,6 @@
 import React from 'react';
 import { companyInfo } from '../data/companyInfo';
-import { WhatsAppIcon } from './icons/WhatsAppIcon';
-import { MapPin } from 'lucide-react';
+import { MapPin, Mail, Phone } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -71,18 +70,19 @@ export const Footer = () => {
               Contacto Directo
             </span>
             <div className="flex items-center gap-2 text-[#9cb2ad] font-body-sm text-sm">
-              <MapPin className="w-4 h-4 text-[#00f0d4]" />
+              <MapPin className="w-4 h-4 text-[#00f0d4] shrink-0" />
               <span>{companyInfo.address}</span>
             </div>
-            <a
-              href={`https://wa.me/${companyInfo.whatsappNumber}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#00f0d4] font-label-md text-sm mt-1 hover:underline font-bold"
-            >
-              <WhatsAppIcon className="w-4 h-4 fill-current" />
-              <span>Línea Directa WhatsApp</span>
-            </a>
+            <div className="flex items-center gap-2 text-[#9cb2ad] font-body-sm text-sm">
+              <Mail className="w-4 h-4 text-[#00f0d4] shrink-0" />
+              <a href={`mailto:${companyInfo.email}`} className="hover:text-white transition-colors">
+                {companyInfo.email}
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-[#9cb2ad] font-body-sm text-sm">
+              <Phone className="w-4 h-4 text-[#00f0d4] shrink-0" />
+              <span>{companyInfo.phoneDisplay}</span>
+            </div>
           </div>
         </div>
 

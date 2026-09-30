@@ -10,6 +10,7 @@ import { ContactB2B } from './components/ContactB2B';
 import { CartDrawer } from './components/CartDrawer';
 import { ToastContainer } from './components/ToastContainer';
 import { Footer } from './components/Footer';
+import { ParallaxBackground } from './components/ParallaxBackground';
 import { CartProvider } from './context/CartContext';
 import { ToastProvider } from './context/ToastContext';
 import { ModalProvider } from './context/ModalContext';
@@ -52,6 +53,9 @@ function App() {
       <ToastProvider>
         <ModalProvider>
           <div className="min-h-screen bg-[#070a0b] text-[#e6edf0] font-body-md relative overflow-hidden">
+            {/* Ambient Dynamic Parallax Layer */}
+            <ParallaxBackground />
+
             {/* Header & Navbar */}
             <Navbar />
 
