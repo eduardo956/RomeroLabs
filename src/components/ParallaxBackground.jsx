@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Zap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -151,9 +152,10 @@ export const ParallaxBackground = () => {
         </div>
       </div>
 
-      <div className="parallax-shape-3 absolute top-[80%] right-[4%] hidden lg:block opacity-30">
-        <div className="w-14 h-14 rounded-xl border border-[#00f0d4]/30 bg-[#0e1619]/30 backdrop-blur-md shadow-[0_0_15px_rgba(0,240,212,0.1)] flex items-center justify-center transform -rotate-6">
-          <span className="text-[#00f0d4] font-bold text-xs">⚡ 24/7</span>
+      <div className="parallax-shape-3 absolute top-[80%] right-[4%] hidden lg:block opacity-40">
+        <div className="px-4 py-2.5 rounded-xl border border-[#00f0d4]/40 bg-[#0e1619]/40 backdrop-blur-md shadow-[0_0_20px_rgba(0,240,212,0.15)] flex items-center gap-1.5 transform -rotate-6">
+          <Zap className="w-4 h-4 text-[#00f0d4] fill-[#00f0d4]/20" />
+          <span className="text-[#00f0d4] font-bold text-xs tracking-wider font-mono">24/7</span>
         </div>
       </div>
     </div>

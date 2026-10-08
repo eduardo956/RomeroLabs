@@ -1,74 +1,135 @@
 export const products = [
   {
     id: "prod-1",
-    title: "Web Informativa Básica",
-    category: "Webs",
+    title: "Diseño Web Profesional",
+    category: "Diseño Web",
     price: 300,
-    badge: "Económico",
+    badge: "Más Solicitado",
     image: "/images/star-product.jpg",
-    shortDesc: "Diseño moderno landing page de 1 a 3 secciones con botón a WhatsApp.",
-    description: "La solución perfecta para profesionales independientes, consultores y pequeños negocios locales que necesitan presencia digital inmediata y seria en Google sin grandes gastos.",
-    demoUrl: "https://poc-romeagency.freedev.app/#",
+    shortDesc: "Sitios web modernos, ultrarrápidos y optimizados para convertir visitantes en clientes reales 24/7.",
+    description: "Creación de sitios web a la medida de tus necesidades, enfocándonos en la experiencia del usuario, el rendimiento y la seguridad. Ya sea un sitio corporativo, un eCommerce o una plataforma personalizada.",
     specs: {
       "Entrega": "3 a 5 días hábiles",
-      "Secciones": "Hero, Servicios, Sobre Nosotros, Contacto",
-      "Mobile Friendly": "100% Adaptable a Celulares",
-      "Optimización SEO": "SEO Local Básico",
-      "Demo en Vivo": "poc-romeagency.freedev.app"
+      "Mobile Friendly": "100% Adaptado a Celulares",
+      "Velocidad": "Carga menor a 0.6 seg",
+      "WhatsApp Directo": "Integrado para consultas inmediatas"
     },
-    details: "Incluye asistencia de instalación en hosting y configuración de dominio por 1 año."
+    details: "Incluye configuración de dominio base, certificado SSL y soporte posterior."
   },
   {
     id: "prod-2",
-    title: "Tienda Online E-Commerce",
-    category: "E-Commerce",
-    price: 650,
-    badge: "Más Vendido",
-    image: "/images/web-demo-preview.jpg",
-    shortDesc: "Catálogo autogestionable con Carrito, Yape, Plin y Notificación a WhatsApp.",
-    description: "Transforma tu negocio con una tienda virtual completa. Tus clientes podrán navegar por categorías, agregar productos al carrito y enviarte el pedido listo formateado a tu WhatsApp o pagar en automático.",
-    specs: {
-      "Entrega": "5 a 7 días hábiles",
-      "Catálogo": "Hasta 50 productos iniciales (Autogestionable)",
-      "Pagos": "Yape, Plin, Transferencia y Pasarela de Tarjetas",
-      "Panel Admin": "Panel fácil desde celular o PC",
-      "Capacitación": "Video tutorial paso a paso de 15 min"
-    },
-    details: "Sin comisiones por venta. La plataforma y la base de clientes son 100% tuyas."
-  },
-  {
-    id: "prod-3",
-    title: "Aplicación Web a Medida",
-    category: "Sistemas",
+    title: "Desarrollo de Software a Medida",
+    category: "Software",
     price: 900,
     badge: "Enterprise",
     image: "/images/web-demo-preview.jpg",
-    shortDesc: "Sistema de reservas, cotizadores dinámicos, paneles de clientes y APIs.",
-    description: "Desarrollo de software web personalizado para empresas con procesos complejos: reservas de citas, cotizadores automáticos en tiempo real, portales de clientes y automatizaciones.",
+    shortDesc: "Optimiza tu negocio con software exclusivo para automatizar procesos y elevar tu productividad.",
+    description: "Desarrollamos soluciones digitales personalizadas para mejorar la eficiencia, automatizar flujos y potenciar tu productividad. Herramientas digitales adaptadas a las necesidades reales de tu empresa.",
     specs: {
-      "Entrega": "7 a 12 días hábiles",
-      "Arquitectura": "Vite + React + Node Backend",
-      "Base de Datos": "Cloud Database segura y escalable",
-      "Panel Admin": "Administración de usuarios y permisos",
-      "Soporte": "Atención prioritaria 1 a 1 dedicada"
+      "Arquitectura": "Sistemas Escalables en la Nube",
+      "Control": "100% Código Propio y Autonomía",
+      "Seguridad": "Encriptación y respaldos automáticos",
+      "Soporte": "Capacitación 1 a 1 para tu equipo"
     },
-    details: "Garantía de rendimiento, velocidad de carga menor a 1 segundo y código limpio."
+    details: "Panel de administración intuitivo y analíticas en tiempo real."
+  },
+  {
+    id: "prod-3",
+    title: "Desarrollo de Aplicaciones Móviles",
+    category: "Mobile",
+    price: 1200,
+    badge: "Apps iOS & Android",
+    image: "/images/web-demo-preview.jpg",
+    shortDesc: "Lleva tu negocio a la palma de la mano de tus clientes con una app nativa intuitiva y optimizada.",
+    description: "Diseñamos y desarrollamos aplicaciones para iOS y Android asegurando una experiencia de usuario fluida y atractiva. Arquitectura sólida, interfaz intuitiva y publicación en tiendas de aplicaciones.",
+    specs: {
+      "Plataformas": "iOS (App Store) & Android (Google Play)",
+      "UI/UX": "Interfaces intuitivas de alto impacto",
+      "Notificaciones": "Push notifications ilimitadas",
+      "Integración": "Conexión con tu base de datos y pasarelas"
+    },
+    details: "Diseño optimizado para fidelizar clientes y generar compras recurrentes."
   },
   {
     id: "prod-4",
-    title: "Rediseño & Optimización Web",
-    category: "Servicios",
+    title: "Diseño UX/UI & Prototipado",
+    category: "Diseño Web",
     price: 450,
-    badge: "Renovación",
+    badge: "Conversión UX",
     image: "/images/star-product.jpg",
-    shortDesc: "Actualiza tu web antigua con estética cybernetic, máxima velocidad y SEO.",
-    description: "Modernizamos tu sitio antiguo o lento para adaptarlo a los estándares actuales de conversión visual, velocidad 100% en Google Core Vitals e integración directa con WhatsApp.",
+    shortDesc: "Interfaces atractivas e intuitivas que mejoran la navegación y disparan la tasa de conversión.",
+    description: "Analizamos el comportamiento de tu audiencia para diseñar experiencias digitales fluidas que potencien la interacción con tu marca y mejoren la retención de usuarios.",
     specs: {
-      "Entrega": "3 a 4 días hábiles",
-      "Velocidad": "Optimización Core Web Vitals > 90%",
-      "UX/UI": "Rediseño estético premium visual",
-      "Seguridad": "Certificado SSL y protección anti-hackers"
+      "Entregable": "Prototipos interactivos Figma",
+      "Metodología": "Design Thinking & User Journeys",
+      "Pruebas": "Testeo de usabilidad en dispositivos",
+      "Design System": "Librería de componentes reutilizables"
     },
-    details: "Conserva tu mismo dominio y posiciones en buscadores."
+    details: "Un diseño bien pensado multiplica la retención y conversión de tu cliente."
+  },
+  {
+    id: "prod-5",
+    title: "Optimización SEO & Posicionamiento Google",
+    category: "Marketing",
+    price: 400,
+    badge: "Visibilidad Google",
+    image: "/images/star-product.jpg",
+    shortDesc: "Aumenta tu visibilidad en Google, atrae tráfico orgánico calificado y convierte visitantes en ventas.",
+    description: "Optimizamos tu arquitectura web, contenido y estrategias de link building para escalar en los resultados de búsqueda de Google y consolidar tu presencia online a largo plazo.",
+    specs: {
+      "Auditoría": "Análisis completo SEO On-Page y Técnico",
+      "Palabras Clave": "Investigación de términos de alta intención",
+      "Google My Business": "SEO Local posicionado",
+      "Reportes": "Informes mensuales de crecimiento de tráfico"
+    },
+    details: "Aumenta el retorno de inversión acumulativo sin pagar anuncios todo el tiempo."
+  },
+  {
+    id: "prod-6",
+    title: "Branding & Identidad de Marca",
+    category: "Branding",
+    price: 500,
+    badge: "Identidad Única",
+    image: "/images/star-product.jpg",
+    shortDesc: "Dale a tu marca la identidad que merece: logotipos, manual de marca y personalidad memorable.",
+    description: "Construimos la voz, valores y estética visual de tu marca para que conectes emocionalmente con tu audiencia y te diferencies de la competencia de manera contundente.",
+    specs: {
+      "Manual de Marca": "Logotipo, paleta de colores y tipografías",
+      "Assets Digitales": "Kits para redes sociales y firma de correo",
+      "Formatos": "Archivos vectoriales editables (AI, SVG, PNG)"
+    },
+    details: "Genera confianza, estatus y lealtad desde el primer contacto visual."
+  },
+  {
+    id: "prod-7",
+    title: "Paid Media & Publicidad Digital",
+    category: "Marketing",
+    price: 550,
+    badge: "Resultados Medibles",
+    image: "/images/web-demo-preview.jpg",
+    shortDesc: "Campañas publicitarias optimizadas en Meta Ads, Google Ads, TikTok Ads y LinkedIn Ads.",
+    description: "Garantizamos campañas de anuncios de alto retorno sobre la inversión (ROAS). Diseñamos piezas gráficas, redactamos copy persuasivo y monitoreamos conversiones en tiempo real.",
+    specs: {
+      "Plataformas": "Facebook, Instagram, Google Search & TikTok",
+      "Pixel & Tracking": "Medición exacta de eventos y compras",
+      "Diseños": "Banners y video ads de alta conversión"
+    },
+    details: "Segmentación precisa para impactar exactamente al cliente listo para comprar."
+  },
+  {
+    id: "prod-8",
+    title: "Community Manager & Redes Sociales",
+    category: "Marketing",
+    price: 450,
+    badge: "Redes Activas",
+    image: "/images/star-product.jpg",
+    shortDesc: "Gestión estratégica de tus canales sociales, creación de contenido y atención de comunidad.",
+    description: "Mantenemos tus canales digitales activos y profesionales con diseño de contenido relevante, reels persuasivos y respuesta activa a comentarios e inboxes.",
+    specs: {
+      "Calendario": "Publicaciones periódicas programadas",
+      "Reels / TikToks": "Edición dinámica con subtítulos",
+      "Atención": "Respuesta inmediata a dudas de clientes"
+    },
+    details: "Transforma seguidores casuales en compradores habituales de tu marca."
   }
 ];

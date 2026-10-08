@@ -25,18 +25,12 @@ export const Navbar = () => {
     >
       <div className="max-w-[1280px] mx-auto px-5 md:px-12 h-full flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="#" className="flex items-center gap-3 group py-1">
           <img
-            src="/images/logo.svg"
+            src="/images/logo-white.png"
             alt="Romero Labs"
-            className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
+            className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(0,240,212,0.3)]"
           />
-          <span className="font-headline-sm text-xl text-white font-extrabold tracking-tight flex items-center gap-1">
-            Romero<span className="text-[#00f0d4]">Labs</span>
-          </span>
         </a>
 
         {/* Desktop Nav */}

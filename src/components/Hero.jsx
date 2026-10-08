@@ -105,14 +105,16 @@ export const Hero = () => {
 
   return (
     <section ref={heroRef} className="relative w-full max-w-[1280px] mx-auto px-5 md:px-12 pt-12 md:pt-16 pb-16 flex flex-col items-center text-center">
-      {/* Real-time Status Badge */}
-      <div className="parallax-hero-badge inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#162022]/90 border border-[#00f0d4]/30 backdrop-blur-md shadow-[0_0_15px_rgba(0,240,212,0.15)] mb-8">
+      {/* Real-time Status Badge with Romero Labs Identity */}
+      <div className="parallax-hero-badge inline-flex items-center gap-3 px-4.5 py-2 rounded-full bg-[#11191c]/90 border border-[#00f0d4]/40 backdrop-blur-xl shadow-[0_0_20px_rgba(0,240,212,0.2)] mb-8">
         <span className="relative flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f0d4] opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00f0d4]"></span>
         </span>
-        <span className="font-label-sm text-xs md:text-sm text-[#bffff0] uppercase tracking-widest font-semibold">
-          ⚡ TU NEGOCIO VISIBLE EN GOOGLE HOY · SÓLO 3 CUPOS ESTA SEMANA
+        <span className="font-label-sm text-xs md:text-sm text-[#bffff0] uppercase tracking-widest font-bold flex items-center gap-2">
+          <span>⚡ ROMERO LABS</span>
+          <span className="text-[#627d78]">•</span>
+          <span>PÁGINAS WEB QUE VENDEN 24/7</span>
         </span>
       </div>
 

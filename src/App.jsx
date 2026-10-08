@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Ticker } from './components/Ticker';
+import { ResultsPillars } from './components/ResultsPillars';
 import { Catalog } from './components/Catalog';
 import { DetailModal } from './components/DetailModal';
 import { Story } from './components/Story';
@@ -70,6 +71,9 @@ function App() {
 
               {/* 2. Ticker Marquee */}
               <Ticker />
+
+              {/* 3. Resultados que te Impulsan (gato.pe feature pillars) */}
+              <ResultsPillars />
 
               {/* 3. Diagnóstico de Pérdidas Section */}
               <section className="w-full bg-[#050708] py-24 relative border-t border-b border-[#223334]/30">

@@ -11,16 +11,10 @@ export const Footer = () => {
           <div className="md:col-span-2 flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <img
-                src="/images/logo.svg"
+                src="/images/logo-white.png"
                 alt="Romero Labs"
-                className="h-8 w-auto object-contain"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
+                className="h-10 sm:h-12 w-auto object-contain transition-transform hover:scale-105 filter drop-shadow-[0_0_12px_rgba(0,240,212,0.3)]"
               />
-              <span className="font-headline-sm text-xl text-white font-extrabold tracking-tight">
-                Romero<span className="text-[#00f0d4]">Labs</span>
-              </span>
             </div>
             <p className="font-body-sm text-sm text-[#9cb2ad] max-w-md leading-relaxed">
               Ingeniería de páginas web de alta conversión para fundadores, marcas y pymes en Perú y Latinoamérica. Arquitectura digital enfocada en ventas directas a WhatsApp.
