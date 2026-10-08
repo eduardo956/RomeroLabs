@@ -19,9 +19,10 @@ export const Hero = () => {
           trigger: containerRef.current,
           start: 'top top',
           end: '+=300%', // Scrolls for 3 screen heights
-          scrub: 1, // Smooth scrubbing
+          scrub: 1.5, // Increased from 1 to 1.5 for smoother scrubbing
           pin: true, // Let GSAP handle the pinning
           pinSpacing: true, // Prevents elements below from shifting up too early
+          anticipatePin: 1, // Smooths out the initial pin and unpin snap
         }
       });
 
@@ -53,9 +54,9 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen bg-[#090a0f] overflow-hidden">
+    <section ref={containerRef} className="relative w-full h-screen bg-[#090a0f] overflow-hidden -mt-20">
       {/* Container that holds the visual content */}
-      <div className="relative w-full h-full flex flex-col items-center justify-center">
+      <div className="relative w-full h-full flex flex-col items-center justify-center pt-20">
         
         {/* The Tunnel Background Image */}
         <div className="absolute inset-0 w-full h-full z-0">
