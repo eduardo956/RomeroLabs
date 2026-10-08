@@ -11,81 +11,49 @@ const projects = [
     title: "Somanos",
     category: "E-Commerce & Branding",
     url: "https://somanos.com.pe/",
-    description: "Plataforma de comercio electrónico con un diseño premium, optimizado para conversiones y velocidad de carga excepcional."
+    description: "Plataforma de comercio electrónico con un diseño premium, optimizado para conversiones y velocidad de carga excepcional.",
+    desktopImg: "/images/portfolio/somanos-desktop.jpg",
+    mobileImg: "/images/portfolio/somanos-mobile.jpg"
   },
   {
     id: 2,
     title: "Romina Portafolio",
     category: "Portafolio Personal",
     url: "https://portafolio-romina.vercel.app/",
-    description: "Diseño minimalista y elegante para destacar proyectos profesionales, enfocado en una experiencia de usuario fluida y visual."
+    description: "Diseño minimalista y elegante para destacar proyectos profesionales, enfocado en una experiencia de usuario fluida y visual.",
+    desktopImg: "/images/portfolio/romina-desktop.jpg",
+    mobileImg: "/images/portfolio/romina-mobile.jpg"
   }
 ];
 
-const DesktopIframe = ({ url }) => {
-  const containerRef = useRef(null);
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    const observer = new ResizeObserver((entries) => {
-      for (let entry of entries) {
-        setScale(entry.contentRect.width / 1280);
-      }
-    });
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
+const DesktopImg = ({ src }) => {
   return (
-    <div ref={containerRef} className="w-full relative aspect-[16/10] bg-[#090a0f] overflow-hidden group rounded-t-lg md:rounded-t-xl cursor-pointer">
-      <div className="absolute inset-0 bg-[#090a0f] flex items-center justify-center z-0">
-        <span className="w-8 h-8 border-2 border-[#d49a53] border-t-transparent rounded-full animate-spin"></span>
-      </div>
-      <div 
-        className="absolute top-0 left-0 origin-top-left w-[1280px] h-[800px] z-10"
-        style={{ transform: `scale(${scale})` }}
-      >
-        <iframe 
-          src={url} 
-          className="w-full h-full border-0 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-1000 bg-white" 
-          scrolling="yes" 
-          title="Desktop view"
-        />
-      </div>
+    <div className="w-full relative aspect-[16/10] bg-[#090a0f] overflow-hidden group rounded-t-lg md:rounded-t-xl cursor-pointer">
+      <img 
+        src={src} 
+        alt="Desktop View"
+        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"; // Fallback placeholder
+        }}
+      />
     </div>
   );
 };
 
-const MobileIframe = ({ url }) => {
-  const containerRef = useRef(null);
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    const observer = new ResizeObserver((entries) => {
-      for (let entry of entries) {
-        setScale(entry.contentRect.width / 375);
-      }
-    });
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
+const MobileImg = ({ src }) => {
   return (
-    <div ref={containerRef} className="w-full relative aspect-[9/19] bg-[#090a0f] overflow-hidden group rounded-[20px] md:rounded-[26px] cursor-pointer">
-      <div className="absolute inset-0 bg-[#090a0f] flex items-center justify-center z-0">
-        <span className="w-5 h-5 border-2 border-[#d49a53] border-t-transparent rounded-full animate-spin"></span>
-      </div>
-      <div 
-        className="absolute top-0 left-0 origin-top-left w-[375px] h-[792px] z-10"
-        style={{ transform: `scale(${scale})` }}
-      >
-        <iframe 
-          src={url} 
-          className="w-full h-full border-0 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-1000 bg-white" 
-          scrolling="yes" 
-          title="Mobile view"
-        />
-      </div>
+    <div className="w-full relative aspect-[9/19] bg-[#090a0f] overflow-hidden group rounded-[20px] md:rounded-[26px] cursor-pointer">
+      <img 
+        src={src} 
+        alt="Mobile View"
+        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80"; // Fallback placeholder
+        }}
+      />
     </div>
   );
 };
@@ -95,16 +63,33 @@ export const Portfolio = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.portfolio-card', {
-        y: 80,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-        }
+      // Slide in from sides for each card
+      gsap.utils.toArray('.portfolio-card').forEach((card, index) => {
+        const isReversed = index % 2 !== 0;
+        
+        // Mockup container slides from one side
+        gsap.from(card.querySelector('.mockup-container'), {
+          x: isReversed ? 150 : -150,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+          }
+        });
+
+        // Info container slides from the other side
+        gsap.from(card.querySelector('.info-container'), {
+          x: isReversed ? -150 : 150,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+          }
+        });
       });
 
       // Hover animation for the mockups
@@ -161,7 +146,7 @@ export const Portfolio = () => {
                   style={{ transform: 'rotateY(-5deg) rotateX(5deg)' }}
                 >
                   <div className="w-full bg-[#14151a] rounded-t-xl md:rounded-t-2xl p-2 md:p-3 pb-0 border border-[#262933] border-b-0 shadow-2xl">
-                    <DesktopIframe url={project.url} />
+                    <DesktopImg src={project.desktopImg} />
                   </div>
                   <div className="w-full h-4 md:h-6 bg-[#1f2029] rounded-b-xl md:rounded-b-2xl relative shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#262933] border-t-0">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-1 md:h-1.5 bg-[#090a0f] rounded-b-md"></div>
@@ -177,13 +162,13 @@ export const Portfolio = () => {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-4 bg-[#1f2029] rounded-b-xl md:rounded-b-2xl z-30 flex justify-center pt-1">
                       <div className="w-8 h-1 rounded-full bg-[#090a0f]"></div>
                     </div>
-                    <MobileIframe url={project.url} />
+                    <MobileImg src={project.mobileImg} />
                   </div>
                 </div>
               </div>
 
               {/* Info Container */}
-              <div className="w-full lg:w-[45%] flex flex-col justify-center text-left">
+              <div className="info-container w-full lg:w-[45%] flex flex-col justify-center text-left">
                 <div className="font-label-sm text-xs font-bold text-[#d49a53] tracking-widest uppercase mb-3">
                   {project.category}
                 </div>

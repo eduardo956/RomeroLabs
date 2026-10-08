@@ -1,53 +1,58 @@
 export const packages = [
   {
     id: "pkg-1",
-    name: "PACK 01 - Web Informativa",
-    price: 300,
-    subtitle: "Ideal para profesionales, marcas personales o servicios locales que necesitan presencia urgente y seria.",
-    badge: "MÁS POPULAR INICIO",
+    name: "WEB BÁSICA",
+    price: "300",
+    subtitle: "Diseño Informativo, Botón de WhatsApp, Adaptado a tu marca. Ideal para presencia rápida.",
+    badge: "STARTUP",
     isPopular: false,
     features: [
-      "Diseño moderno de 1 a 3 secciones",
-      "Botón directo a WhatsApp integrado",
-      "Optimización básica en Google (SEO Local)",
-      "Dominio y hosting configurado (1er año asistido)",
-      "Adaptada a celulares al 100%",
-      "Entrega rápida: 3 a 5 días"
+      "Diseño de 1 a 3 secciones",
+      "Adaptación 100% a tu marca",
+      "Botón directo a WhatsApp"
     ],
-    ctaText: "Empezar con Web Informativa"
+    ctaText: "Quiero la Web Básica"
   },
   {
     id: "pkg-2",
-    name: "PACK 02 - E-Commerce / Tienda Online",
-    price: 650,
-    subtitle: "Para negocios que venden productos físicos o catálogos y quieren cobrar con Yape, Plin y tarjetas.",
-    badge: "MÁS VENDIDO",
+    name: "WEB INTERACTIVA",
+    price: "500",
+    subtitle: "Todo lo básico, Animaciones avanzadas, Elementos dinámicos y videos. Para alto impacto visual.",
+    badge: "ALTO IMPACTO",
     isPopular: true,
     features: [
-      "Catálogo autogestionable de productos y categorías",
-      "Carrito y pagos: Yape, Plin y Tarjetas",
-      "Notificaciones automáticas de pedidos al WhatsApp",
-      "SEO para posicionar tus productos en Google",
-      "Panel fácil para subir fotos y cambiar precios",
-      "Capacitación express en video (aprende en 15 min)"
+      "Todo lo de la Web Básica",
+      "Animaciones avanzadas",
+      "Elementos dinámicos y videos"
     ],
-    ctaText: "Quiero Mi Tienda Online"
+    ctaText: "Quiero la Web Interactiva"
   },
   {
     id: "pkg-3",
-    name: "PACK 03 - Aplicación Web a Medida",
-    price: 900,
-    subtitle: "Para empresas que necesitan sistemas de reservas, cotizadores dinámicos o paneles de clientes.",
-    badge: "COMPLETO ENTERPRISE",
+    name: "E-COMMERCE / PLATAFORMA",
+    price: "1,000",
+    subtitle: "Base de datos, Login de usuarios, Catálogo, Pasarela de pagos. Tiendas online y reservas.",
+    badge: "VENTAS",
     isPopular: false,
     features: [
-      "Base de datos y panel de administración privado",
-      "Sistema de citas, reservas o cotizaciones automáticas",
-      "Cuentas de usuario y acceso con contraseña",
-      "Integración de APIs o Inteligencia Artificial básica",
-      "Máxima velocidad y seguridad garantizada",
-      "Soporte prioritario 1 a 1"
+      "Base de datos y Login de usuarios",
+      "Catálogo de productos",
+      "Pasarela de pagos integradas"
     ],
-    ctaText: "Cotizar Aplicación a Medida"
+    ctaText: "Quiero E-Commerce"
+  },
+  {
+    id: "pkg-4",
+    name: "SISTEMAS A MEDIDA",
+    price: "2,500",
+    subtitle: "Software administrativo, Gestión interna, Apps web a medida. Automatización de empresas.",
+    badge: "ENTERPRISE",
+    isPopular: false,
+    features: [
+      "Software administrativo a medida",
+      "Gestión interna automatizada",
+      "Apps web escalables"
+    ],
+    ctaText: "Cotizar Sistema"
   }
 ];

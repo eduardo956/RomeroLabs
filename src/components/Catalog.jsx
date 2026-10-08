@@ -33,7 +33,7 @@ export const Catalog = () => {
           CATÁLOGO DE SERVICIOS DIGITALES
         </span>
         <h2 className="font-headline-lg text-3xl md:text-5xl text-white font-extrabold tracking-tight mt-2">
-          Soluciones Web & Software Creadas Para Convertir
+          Catálogo de Soluciones Digitales
         </h2>
         <p className="font-body-md text-base text-[#a1a1aa] mt-3">
           Selecciona una solución para explorar especificaciones técnicas o solicitar una cotización directa.
