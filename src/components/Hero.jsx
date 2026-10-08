@@ -13,18 +13,19 @@ export const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // The timeline that controls the entire 400vh scroll
+      // The timeline that controls the entire scroll sequence
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
-          end: 'bottom bottom',
+          end: '+=300%', // Scrolls for 3 screen heights
           scrub: 1, // Smooth scrubbing
+          pin: true, // Let GSAP handle the pinning
+          pinSpacing: true, // Prevents elements below from shifting up too early
         }
       });
 
       // 1. Zoom the background image continuously throughout the whole scroll
-      // We scale it up significantly to simulate moving forward in the tunnel
       tl.to(imageRef.current, {
         scale: 3.5,
         transformOrigin: "center center",
@@ -52,9 +53,9 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full h-[400vh] bg-[#090a0f]">
-      {/* Sticky Container that holds the visual content */}
-      <div className="sticky top-0 w-full h-screen overflow-hidden flex flex-col items-center justify-center">
+    <section ref={containerRef} className="relative w-full h-screen bg-[#090a0f] overflow-hidden">
+      {/* Container that holds the visual content */}
+      <div className="relative w-full h-full flex flex-col items-center justify-center">
         
         {/* The Tunnel Background Image */}
         <div className="absolute inset-0 w-full h-full z-0">
