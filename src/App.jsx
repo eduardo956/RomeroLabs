@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Ticker } from './components/Ticker';
 import { ResultsPillars } from './components/ResultsPillars';
+import { Portfolio } from './components/Portfolio';
 import { Catalog } from './components/Catalog';
 import { DetailModal } from './components/DetailModal';
 import { Story } from './components/Story';
@@ -53,7 +54,7 @@ function App() {
     <CartProvider>
       <ToastProvider>
         <ModalProvider>
-          <div className="min-h-screen bg-[#070a0b] text-[#e6edf0] font-body-md relative overflow-hidden">
+          <div className="min-h-screen bg-[#090a0f] text-white font-body-md relative overflow-hidden">
             {/* Ambient Dynamic Parallax Layer */}
             <ParallaxBackground />
 
@@ -75,6 +76,9 @@ function App() {
               {/* 3. Resultados que te Impulsan (Feature pillars) */}
               <ResultsPillars />
 
+              {/* Proyectos / Portafolio */}
+              <Portfolio />
+
               {/* 4. Catálogo de Servicios */}
               <Catalog />
 
@@ -90,13 +94,13 @@ function App() {
               {/* 8. FAQ Section */}
               <section className="w-full py-28 max-w-[960px] mx-auto px-5 md:px-12" id="faq">
                 <div className="text-center mb-16">
-                  <span className="font-label-sm text-xs md:text-sm text-[#bffff0] uppercase tracking-widest font-bold">
+                  <span className="font-label-sm text-xs md:text-sm text-[#f7e1bc] uppercase tracking-widest font-bold">
                     RESOLVEMOS TUS DUDAS
                   </span>
-                  <h2 className="font-headline-lg text-3xl md:text-4xl text-[#e6edf0] font-extrabold tracking-tight mt-2">
+                  <h2 className="font-headline-lg text-3xl md:text-4xl text-white font-extrabold tracking-tight mt-2">
                     Preguntas Frecuentes
                   </h2>
-                  <p className="font-body-md text-base text-[#9cb2ad] mt-2">
+                  <p className="font-body-md text-base text-[#a1a1aa] mt-2">
                     Todo lo que necesitas saber antes de lanzar tu sitio web con Romero Labs.
                   </p>
                 </div>
@@ -105,21 +109,21 @@ function App() {
                   {faqs.map((faq, idx) => (
                     <div
                       key={idx}
-                      className="bg-gradient-to-b from-[#0c1315] to-[#080d0e] border border-[#223334]/60 rounded-xl overflow-hidden transition-all duration-300"
+                      className="bg-[#14151a] border border-[#262933] rounded-xl overflow-hidden transition-all duration-300"
                     >
                       <button
                         onClick={() => toggleFaq(idx)}
-                        className="w-full p-6 text-left flex items-center justify-between gap-4 font-headline-sm text-base md:text-lg font-bold text-white hover:text-[#00f0d4] transition-colors"
+                        className="w-full p-6 text-left flex items-center justify-between gap-4 font-headline-sm text-base md:text-lg font-bold text-white hover:text-[#d49a53] transition-colors"
                       >
                         <span>{faq.q}</span>
                         <ChevronDown
-                          className={`w-5 h-5 text-[#627d78] transition-transform duration-300 ${
-                            openFaqIndex === idx ? 'rotate-180 text-[#00f0d4]' : ''
+                          className={`w-5 h-5 text-[#a1a1aa] transition-transform duration-300 ${
+                            openFaqIndex === idx ? 'rotate-180 text-[#d49a53]' : ''
                           }`}
                         />
                       </button>
                       {openFaqIndex === idx && (
-                        <div className="px-6 pb-6 pt-0 font-body-md text-sm md:text-base text-[#9cb2ad] leading-relaxed animate-in fade-in duration-200">
+                        <div className="px-6 pb-6 pt-0 font-body-md text-sm md:text-base text-[#a1a1aa] leading-relaxed animate-in fade-in duration-200">
                           {faq.a}
                         </div>
                       )}
@@ -129,16 +133,16 @@ function App() {
               </section>
 
               {/* 9. Final CTA Banner */}
-              <section className="w-full bg-gradient-to-b from-[#070a0b] via-[#050708] to-[#030405] py-24 border-t border-[#223334]/40">
+              <section className="w-full bg-[#090a0f] py-24 border-t border-[#262933]">
                 <div className="max-w-[1000px] mx-auto px-5 md:px-12 text-center">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00f0d4]/15 border border-[#00f0d4]/30 text-[#00f0d4] font-label-sm text-xs uppercase mb-5">
-                    <span className="w-2 h-2 rounded-full bg-[#00f0d4] animate-pulse"></span>
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d49a53]/15 border border-[#d49a53]/30 text-[#f7e1bc] font-label-sm text-xs uppercase mb-5">
+                    <span className="w-2 h-2 rounded-full bg-[#d49a53] animate-pulse"></span>
                     Cupos de desarrollo limitados por semana
                   </div>
                   <h2 className="font-headline-lg text-3xl md:text-5xl text-white font-extrabold tracking-tight">
                     Deja de perder prospectos hoy mismo
                   </h2>
-                  <p className="font-body-lg text-base md:text-lg text-[#9cb2ad] max-w-xl mx-auto mt-4 mb-10 leading-relaxed">
+                  <p className="font-body-lg text-base md:text-lg text-[#a1a1aa] max-w-xl mx-auto mt-4 mb-10 leading-relaxed">
                     Haz que tu negocio transmita la confianza necesaria para que te compren a ti y no a tu competencia.
                   </p>
                   <a
@@ -147,7 +151,7 @@ function App() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#00f0d4] via-[#18ebd0] to-[#42e0e5] text-[#003b34] font-headline-sm text-lg md:text-xl font-extrabold rounded-xl shadow-[0_0_35px_rgba(0,240,212,0.4)] hover:brightness-110 transition-all transform hover:-translate-y-1 animate-cta-glow"
+                    className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#d49a53] via-[#e5b878] to-[#f7e1bc] text-[#090a0f] font-headline-sm text-lg md:text-xl font-extrabold rounded-xl shadow-[0_0_35px_rgba(212,154,83,0.3)] hover:brightness-110 transition-all transform hover:-translate-y-1 animate-cta-glow"
                   >
                     <WhatsAppIcon className="w-6 h-6 fill-current" />
                     <span>Hablar con un Asesor por WhatsApp</span>
@@ -169,9 +173,9 @@ function App() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:flex items-center gap-2 mr-3 px-4 py-2 bg-[#0c1315]/95 border border-[#00f0d4]/40 backdrop-blur-xl rounded-xl text-[#e6edf0] font-label-sm text-xs shadow-2xl hover:text-[#00f0d4] transition-colors"
+                className="hidden sm:flex items-center gap-2 mr-3 px-4 py-2 bg-[#14151a]/95 border border-[#d49a53]/40 backdrop-blur-xl rounded-xl text-[#f7e1bc] font-label-sm text-xs shadow-2xl hover:text-white transition-colors"
               >
-                <span className="w-2 h-2 rounded-full bg-[#00f0d4] animate-ping"></span>
+                <span className="w-2 h-2 rounded-full bg-[#d49a53] animate-ping"></span>
                 <span>¿En qué te ayudamos hoy? <strong>Cotiza aquí</strong></span>
               </a>
               <a
@@ -181,7 +185,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contactar por WhatsApp"
-                className="w-14 h-14 rounded-full bg-gradient-to-br from-[#00f0d4] to-[#42e0e5] text-[#003b34] flex items-center justify-center shadow-[0_0_25px_rgba(0,240,212,0.5)] transition-transform hover:scale-110 relative"
+                className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d49a53] to-[#f7e1bc] text-[#090a0f] flex items-center justify-center shadow-[0_0_25px_rgba(212,154,83,0.5)] transition-transform hover:scale-110 relative"
               >
                 <WhatsAppIcon className="w-7 h-7 fill-current" />
                 <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border border-black flex items-center justify-center text-[10px] text-black font-extrabold">
