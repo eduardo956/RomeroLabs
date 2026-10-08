@@ -43,15 +43,37 @@ export const Hero = () => {
         { opacity: 1, y: 0, duration: 0.1 }, 0.35)
         .to(text2Ref.current, { opacity: 0, y: -50, duration: 0.1 }, 0.6);
 
-      // 4. Animate Text 3 (The Main Titles - Fades in and stays)
-      tl.fromTo(text3Ref.current,
-        { opacity: 0, scale: 0.8 },
-        { opacity: 1, scale: 1, duration: 0.2 }, 0.75);
+      // 4. Animate Text 3 (The Main Titles - Typewriter effect)
+      // Snap the container to visible so characters can begin animating
+      tl.to(text3Ref.current, { opacity: 1, duration: 0.01 }, 0.75);
+      
+      // Typewriter effect: stagger the characters' opacity
+      tl.to('.typewriter-char', {
+        opacity: 1,
+        stagger: 0.003,
+        ease: "none",
+        duration: 0.01,
+      }, 0.75);
+
+      // Fade in the sub-paragraph after typing
+      tl.to('.hero-paragraph', {
+        opacity: 1,
+        y: 0,
+        duration: 0.1,
+      }, 0.85);
 
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
+
+  const splitText = (text) => {
+    return text.split('').map((char, i) => (
+      <span key={i} className="typewriter-char opacity-0 inline-block">
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ));
+  };
 
   return (
     <section ref={containerRef} className="relative w-full h-screen bg-[#090a0f] overflow-hidden -mt-20">
@@ -86,30 +108,17 @@ export const Hero = () => {
 
         {/* Text 3 (Main Titles) */}
         <div ref={text3Ref} className="absolute z-10 text-center px-5 opacity-0 flex flex-col items-center">
-          {/* Real-time Status Badge */}
-          <div className="inline-flex items-center gap-3 px-4.5 py-2 rounded-full bg-[#14151a] border border-[#d49a53]/40 backdrop-blur-xl shadow-[0_0_25px_rgba(212,154,83,0.15)] mb-8">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d49a53] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#f7e1bc]"></span>
-            </span>
-            <span className="font-label-sm text-xs md:text-sm text-[#f7e1bc] uppercase tracking-widest font-extrabold flex items-center gap-2">
-              <span>⚡ ROMERO LABS</span>
-              <span className="text-[#3b2d23]">•</span>
-              <span>SOFTWARE & DESARROLLO WEB</span>
-            </span>
-          </div>
-
           <h1 className="font-display-hero text-4xl sm:text-5xl md:text-6xl lg:text-[66px] font-extrabold text-white max-w-5xl tracking-tight leading-[1.1] mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#f7e1bc] to-[#d49a53] drop-shadow-[0_0_35px_rgba(212,154,83,0.3)] inline-block">
-              Tus Clientes Están Buscando En Google.
+              {splitText("Tus Clientes Están Buscando En Google.")}
             </span>
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d49a53] via-[#f7e1bc] to-white drop-shadow-[0_0_35px_rgba(212,154,83,0.3)] inline-block mt-2">
-              Hacemos Que Te Compren A Ti.
+              {splitText("Hacemos Que Te Compren A Ti.")}
             </span>
           </h1>
 
-          <p className="font-body-lg text-lg md:text-xl text-[#a1a1aa] max-w-2xl mx-auto mb-6 leading-relaxed">
+          <p className="hero-paragraph opacity-0 translate-y-4 font-body-lg text-lg md:text-xl text-[#a1a1aa] max-w-2xl mx-auto mb-6 leading-relaxed">
             Páginas web de alta velocidad, tiendas virtuales y software a la medida diseñados para generar ventas 24/7 directas a tu WhatsApp.
           </p>
         </div>
