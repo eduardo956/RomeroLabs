@@ -113,12 +113,6 @@ export const Hero = () => {
             Páginas web de alta velocidad, tiendas virtuales y software a la medida diseñados para generar ventas 24/7 directas a tu WhatsApp.
           </p>
         </div>
-        
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 animate-pulse">
-          <span className="font-label-sm text-xs text-[#d49a53] tracking-widest uppercase">Haz Scroll para avanzar</span>
-          <div className="w-px h-12 bg-gradient-to-b from-[#d49a53] to-transparent"></div>
-        </div>
 
       </div>
     </section>

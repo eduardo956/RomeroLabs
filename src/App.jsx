@@ -70,9 +70,6 @@ function App() {
               {/* 1. Hero Section */}
               <Hero />
 
-              {/* 2. Ticker Marquee */}
-              <Ticker />
-
               {/* 3. Resultados que te Impulsan (Feature pillars) */}
               <ResultsPillars />
 
@@ -167,17 +164,6 @@ function App() {
 
             {/* Global Floating WhatsApp Widget */}
             <div className="fixed bottom-6 right-6 z-50 flex items-center group">
-              <a
-                href={`https://wa.me/${whatsappConfig.phoneNumber}?text=${encodeURIComponent(
-                  whatsappConfig.defaultMessage
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:flex items-center gap-2 mr-3 px-4 py-2 bg-[#14151a]/95 border border-[#d49a53]/40 backdrop-blur-xl rounded-xl text-[#f7e1bc] font-label-sm text-xs shadow-2xl hover:text-white transition-colors"
-              >
-                <span className="w-2 h-2 rounded-full bg-[#d49a53] animate-ping"></span>
-                <span>¿En qué te ayudamos hoy? <strong>Cotiza aquí</strong></span>
-              </a>
               <a
                 href={`https://wa.me/${whatsappConfig.phoneNumber}?text=${encodeURIComponent(
                   whatsappConfig.defaultMessage
