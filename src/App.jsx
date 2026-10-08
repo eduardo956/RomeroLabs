@@ -76,11 +76,11 @@ function App() {
               {/* Proyectos / Portafolio */}
               <Portfolio />
 
-              {/* 4. Catálogo de Servicios */}
-              <Catalog />
-
-              {/* 5. Packages Section */}
+              {/* 4. Packages Section (Ofertas / Precios Transparentes) */}
               <PackagesSection />
+
+              {/* 5. Catálogo de Servicios */}
+              <Catalog />
 
               {/* 6. Story & Guarantee */}
               <Story />

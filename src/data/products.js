@@ -1,135 +1,138 @@
 export const products = [
   {
     id: "prod-1",
-    title: "Diseño Web Profesional",
+    title: "Diseño Web de Alta Conversión",
     category: "Diseño Web",
     price: 300,
-    badge: "Más Solicitado",
-    image: "/images/star-product.jpg",
-    shortDesc: "Sitios web modernos, ultrarrápidos y optimizados para convertir visitantes en clientes reales 24/7.",
-    description: "Creación de sitios web a la medida de tus necesidades, enfocándonos en la experiencia del usuario, el rendimiento y la seguridad. Ya sea un sitio corporativo, un eCommerce o una plataforma personalizada.",
+    badge: "Máxima Rentabilidad",
+    image: "/images/cat_web.jpg",
+    shortDesc: "Convierte curiosos en clientes que pagan. Webs rápidas, magnéticas y listas para vender 24/7.",
+    description: "No necesitas una web bonita, necesitas una máquina de ventas. Diseñamos sitios corporativos y eCommerce con arquitectura persuasiva (UX/UI) enfocados al 100% en multiplicar tu tasa de conversión y generar leads en piloto automático.",
     specs: {
-      "Entrega": "3 a 5 días hábiles",
-      "Mobile Friendly": "100% Adaptado a Celulares",
-      "Velocidad": "Carga menor a 0.6 seg",
-      "WhatsApp Directo": "Integrado para consultas inmediatas"
+      "Entrega Rápida": "Lista para vender en 3 a 5 días",
+      "Mobile First": "Experiencia impecable en cualquier celular",
+      "Rendimiento": "Tiempos de carga menores a 1 segundo",
+      "WhatsApp": "Embudo directo a tu chat sin fricciones"
     },
-    details: "Incluye configuración de dominio base, certificado SSL y soporte posterior."
+    details: "Olvídate de mantenimientos complicados. Te entregamos un activo digital 100% tuyo y listo para facturar."
   },
   {
     id: "prod-2",
-    title: "Desarrollo de Software a Medida",
+    title: "Software a Medida & Automatización",
     category: "Software",
     price: 900,
-    badge: "Enterprise",
-    image: "/images/web-demo-preview.jpg",
-    shortDesc: "Optimiza tu negocio con software exclusivo para automatizar procesos y elevar tu productividad.",
-    description: "Desarrollamos soluciones digitales personalizadas para mejorar la eficiencia, automatizar flujos y potenciar tu productividad. Herramientas digitales adaptadas a las necesidades reales de tu empresa.",
+    badge: "Eficiencia Total",
+    image: "/images/cat_software.jpg",
+    shortDesc: "Elimina tareas manuales y cuellos de botella con sistemas hechos exactamente a la medida de tu empresa.",
+    description: "Si Excel ya no es suficiente, es hora de escalar. Desarrollamos software y plataformas en la nube que automatizan tus procesos, reducen errores humanos y te devuelven horas de tiempo libre cada semana.",
     specs: {
-      "Arquitectura": "Sistemas Escalables en la Nube",
-      "Control": "100% Código Propio y Autonomía",
-      "Seguridad": "Encriptación y respaldos automáticos",
-      "Soporte": "Capacitación 1 a 1 para tu equipo"
+      "Control Total": "Código propio, sin pagos recurrentes a terceros",
+      "Escalabilidad": "Sistemas que crecen junto a tu facturación",
+      "Seguridad": "Datos encriptados y backups automatizados",
+      "Capacitación": "Entrenamiento directo para ti y tu equipo"
     },
-    details: "Panel de administración intuitivo y analíticas en tiempo real."
+    details: "Transforma el caos operativo en un sistema inteligente, centralizado y altamente rentable."
   },
   {
     id: "prod-3",
-    title: "Desarrollo de Aplicaciones Móviles",
+    title: "Apps iOS & Android Nativas",
     category: "Mobile",
     price: 1200,
-    badge: "Apps iOS & Android",
-    image: "/images/web-demo-preview.jpg",
-    shortDesc: "Lleva tu negocio a la palma de la mano de tus clientes con una app nativa intuitiva y optimizada.",
-    description: "Diseñamos y desarrollamos aplicaciones para iOS y Android asegurando una experiencia de usuario fluida y atractiva. Arquitectura sólida, interfaz intuitiva y publicación en tiendas de aplicaciones.",
+    badge: "Fidelización",
+    image: "/images/cat_software.jpg",
+    shortDesc: "Mantén tu marca en el bolsillo de tus clientes. Aplicaciones rápidas y adictivas para escalar tus ventas.",
+    description: "Lleva la retención de tus clientes a un nivel superior. Diseñamos aplicaciones móviles con pasarelas de pago integradas y notificaciones push para reactivar a tus compradores de manera instantánea y gratuita.",
     specs: {
-      "Plataformas": "iOS (App Store) & Android (Google Play)",
-      "UI/UX": "Interfaces intuitivas de alto impacto",
-      "Notificaciones": "Push notifications ilimitadas",
-      "Integración": "Conexión con tu base de datos y pasarelas"
+      "Presencia Dual": "Publicación garantizada en App Store y Google Play",
+      "Retención": "Notificaciones push para lanzar ofertas al instante",
+      "Experiencia": "UX/UI diseñado para una navegación sin fricción",
+      "Integración": "Conexión en tiempo real con tu base de datos"
     },
-    details: "Diseño optimizado para fidelizar clientes y generar compras recurrentes."
+    details: "Reduce el costo de adquisición de clientes y aumenta el valor de vida (LTV) de tus usuarios activos."
   },
   {
     id: "prod-4",
-    title: "Diseño UX/UI & Prototipado",
+    title: "UX/UI Design & Prototipado",
     category: "Diseño Web",
     price: 450,
-    badge: "Conversión UX",
-    image: "/images/star-product.jpg",
-    shortDesc: "Interfaces atractivas e intuitivas que mejoran la navegación y disparan la tasa de conversión.",
-    description: "Analizamos el comportamiento de tu audiencia para diseñar experiencias digitales fluidas que potencien la interacción con tu marca y mejoren la retención de usuarios.",
+    badge: "Persuasión Visual",
+    image: "/images/cat_web.jpg",
+    shortDesc: "Rediseña tu plataforma actual para retener a los usuarios y guiarlos directamente hacia el botón de compra.",
+    description: "Un diseño confuso te hace perder dinero. Aplicamos principios de neurociencia y comportamiento del usuario para rediseñar flujos digitales, eliminando la fricción y facilitando que tus clientes te compren más rápido.",
     specs: {
-      "Entregable": "Prototipos interactivos Figma",
-      "Metodología": "Design Thinking & User Journeys",
-      "Pruebas": "Testeo de usabilidad en dispositivos",
-      "Design System": "Librería de componentes reutilizables"
+      "Prototipos": "Mapeo interactivo de la experiencia en Figma",
+      "Wireframing": "Arquitectura de información orientada a ventas",
+      "User Testing": "Pruebas de usabilidad para validar la conversión",
+      "Sistemas": "Creación de Design Systems escalables"
     },
-    details: "Un diseño bien pensado multiplica la retención y conversión de tu cliente."
+    details: "Aumenta tus métricas de retención y disminuye la tasa de rebote con decisiones de diseño respaldadas por datos."
   },
   {
     id: "prod-5",
-    title: "Optimización SEO & Posicionamiento Google",
+    title: "Tráfico Orgánico & SEO",
     category: "Marketing",
     price: 400,
-    badge: "Visibilidad Google",
-    image: "/images/star-product.jpg",
-    shortDesc: "Aumenta tu visibilidad en Google, atrae tráfico orgánico calificado y convierte visitantes en ventas.",
-    description: "Optimizamos tu arquitectura web, contenido y estrategias de link building para escalar en los resultados de búsqueda de Google y consolidar tu presencia online a largo plazo.",
+    badge: "Dominio en Google",
+    image: "/images/cat_marketing.jpg",
+    shortDesc: "Posiciónate por encima de tu competencia en Google y recibe clientes calificados sin pagar publicidad.",
+    description: "Acapara las primeras posiciones de búsqueda cuando tus clientes intenten comprar. Optimizamos el código, contenido y autoridad de tu web para que Google te priorice y recibas un flujo constante de prospectos gratis.",
     specs: {
-      "Auditoría": "Análisis completo SEO On-Page y Técnico",
-      "Palabras Clave": "Investigación de términos de alta intención",
-      "Google My Business": "SEO Local posicionado",
-      "Reportes": "Informes mensuales de crecimiento de tráfico"
+      "Auditoría SEO": "Reparación de errores técnicos que frenan tu web",
+      "Keywords": "Selección de palabras clave con alta intención de compra",
+      "SEO Local": "Dominio de mapas y búsquedas geolocalizadas",
+      "Analítica": "Reportes mensuales de crecimiento y ROI"
     },
-    details: "Aumenta el retorno de inversión acumulativo sin pagar anuncios todo el tiempo."
+    details: "Convierte tu sitio web en tu mejor vendedor activo los 365 días del año."
   },
   {
     id: "prod-6",
-    title: "Branding & Identidad de Marca",
+    title: "Branding de Alto Impacto",
     category: "Branding",
     price: 500,
-    badge: "Identidad Única",
-    image: "/images/star-product.jpg",
-    shortDesc: "Dale a tu marca la identidad que merece: logotipos, manual de marca y personalidad memorable.",
-    description: "Construimos la voz, valores y estética visual de tu marca para que conectes emocionalmente con tu audiencia y te diferencies de la competencia de manera contundente.",
+    badge: "Premium",
+    image: "/images/cat_design.jpg",
+    shortDesc: "Construye una identidad de marca magnética, memorable y que proyecte absoluta autoridad en tu sector.",
+    description: "Si te ves barato, no puedes cobrar caro. Diseñamos identidades visuales contundentes que elevan la percepción de valor de tus servicios, dándote la confianza para competir con los líderes de tu industria.",
     specs: {
-      "Manual de Marca": "Logotipo, paleta de colores y tipografías",
-      "Assets Digitales": "Kits para redes sociales y firma de correo",
-      "Formatos": "Archivos vectoriales editables (AI, SVG, PNG)"
+      "Manual de Marca": "Identidad visual, logotipo, paleta y tipografías",
+      "Voz de Marca": "Definición del tono y mensajes persuasivos",
+      "Aplicaciones": "Diseño de tarjetas, firmas y banners corporativos",
+      "Archivos": "Entrega de todo el material vectorial y editable"
     },
-    details: "Genera confianza, estatus y lealtad desde el primer contacto visual."
+    details: "Genera estatus y cobra lo que realmente vale tu trabajo desde la primera impresión visual."
   },
   {
     id: "prod-7",
-    title: "Paid Media & Publicidad Digital",
+    title: "Paid Media & Escalabilidad",
     category: "Marketing",
     price: 550,
-    badge: "Resultados Medibles",
-    image: "/images/web-demo-preview.jpg",
-    shortDesc: "Campañas publicitarias optimizadas en Meta Ads, Google Ads, TikTok Ads y LinkedIn Ads.",
-    description: "Garantizamos campañas de anuncios de alto retorno sobre la inversión (ROAS). Diseñamos piezas gráficas, redactamos copy persuasivo y monitoreamos conversiones en tiempo real.",
+    badge: "Retorno (ROAS)",
+    image: "/images/cat_marketing.jpg",
+    shortDesc: "Invierte $1 y saca $3. Campañas publicitarias hiper-segmentadas para reventar tu capacidad de ventas.",
+    description: "No se trata de likes, se trata de ventas. Diseñamos embudos publicitarios en Meta (Facebook/Instagram), Google y TikTok para inyectar prospectos altamente calificados directo a tu WhatsApp todos los días.",
     specs: {
-      "Plataformas": "Facebook, Instagram, Google Search & TikTok",
-      "Pixel & Tracking": "Medición exacta de eventos y compras",
-      "Diseños": "Banners y video ads de alta conversión"
+      "Segmentación": "Audiencias láser orientadas a compradores",
+      "Creatividades": "Diseño de anuncios visualmente disruptivos",
+      "Tracking": "Instalación de Píxeles para medir cada centavo",
+      "Optimización": "Ajustes diarios para reducir el costo por venta"
     },
-    details: "Segmentación precisa para impactar exactamente al cliente listo para comprar."
+    details: "Delega la captación de clientes y enfócate únicamente en cerrar los tratos."
   },
   {
     id: "prod-8",
-    title: "Community Manager & Redes Sociales",
+    title: "Gestión de Comunidad (CM)",
     category: "Marketing",
     price: 450,
-    badge: "Redes Activas",
-    image: "/images/star-product.jpg",
-    shortDesc: "Gestión estratégica de tus canales sociales, creación de contenido y atención de comunidad.",
-    description: "Mantenemos tus canales digitales activos y profesionales con diseño de contenido relevante, reels persuasivos y respuesta activa a comentarios e inboxes.",
+    badge: "Autoridad Social",
+    image: "/images/cat_design.jpg",
+    shortDesc: "Mantén tus redes sociales vivas, profesionales y aportando valor constante a tus futuros compradores.",
+    description: "Tus redes sociales son tu escaparate digital. Producimos contenido estratégico y gestionamos tus perfiles para construir confianza a largo plazo, educar a tu audiencia y mantener a tu marca siempre top of mind.",
     specs: {
-      "Calendario": "Publicaciones periódicas programadas",
-      "Reels / TikToks": "Edición dinámica con subtítulos",
-      "Atención": "Respuesta inmediata a dudas de clientes"
+      "Planificación": "Calendario de contenido mensual estratégico",
+      "Formatos": "Diseño de posts educativos, carruseles y reels",
+      "Interacción": "Respuestas rápidas para cuidar la reputación online",
+      "Crecimiento": "Estrategias para aumentar seguidores de calidad"
     },
-    details: "Transforma seguidores casuales en compradores habituales de tu marca."
+    details: "Transforma a seguidores fríos en fanáticos incondicionales de tu negocio."
   }
 ];
