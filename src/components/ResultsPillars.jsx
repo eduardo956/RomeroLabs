@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Cpu, Smartphone, Sparkles, Target, Layout, Share2, CheckCircle } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const ResultsPillars = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.pillar-card',
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const pillars = [
     {
       icon: Cpu,
@@ -48,17 +76,17 @@ export const ResultsPillars = () => {
   ];
 
   return (
-    <section className="w-full bg-[#140a06] py-24 relative z-10 border-t border-b border-[#3d2314]/60" id="resultados">
+    <section ref={sectionRef} className="w-full bg-[#090a0f] py-24 relative z-10 border-t border-b border-[#262933]" id="resultados">
       <div className="max-w-[1280px] mx-auto px-5 md:px-12">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="font-label-sm text-xs md:text-sm text-[#f7e1bc] uppercase tracking-widest font-extrabold">
             RESULTADOS QUE TE IMPULSAN
           </span>
-          <h2 className="font-headline-lg text-3xl md:text-5xl text-[#faf0dc] font-extrabold tracking-tight mt-2">
+          <h2 className="font-headline-lg text-3xl md:text-5xl text-white font-extrabold tracking-tight mt-2">
             Tecnología & Estrategia Digital de Vanguardia
           </h2>
-          <p className="font-body-md text-base text-[#d6c4b2] mt-3 leading-relaxed">
+          <p className="font-body-md text-base text-[#a1a1aa] mt-3 leading-relaxed">
             Transformamos tu empresa con soluciones digitales hechas a la medida, acelerando tu presencia en internet y multiplicando tus ventas.
           </p>
         </div>
@@ -70,14 +98,14 @@ export const ResultsPillars = () => {
             return (
               <div
                 key={idx}
-                className="neon-box-hover bg-gradient-to-b from-[#27170e] to-[#1d1009] border border-[#4a2c1a]/60 p-8 rounded-2xl flex flex-col justify-between group"
+                className="pillar-card neon-box-hover bg-gradient-to-b from-[#14151a] to-[#0d0e12] border border-[#262933] p-8 rounded-2xl flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-[#140a06] border border-[#d49a53]/40 flex items-center justify-center text-[#d49a53] group-hover:scale-110 group-hover:border-[#f7e1bc] transition-all shadow-[0_0_20px_rgba(212,154,83,0.2)]">
+                    <div className="w-14 h-14 rounded-2xl bg-[#090a0f] border border-[#d49a53]/40 flex items-center justify-center text-[#d49a53] group-hover:scale-110 group-hover:border-[#f7e1bc] transition-all shadow-[0_0_20px_rgba(212,154,83,0.2)]">
                       <Icon className="w-7 h-7" />
                     </div>
-                    <span className="font-label-sm text-[11px] font-bold text-[#f7e1bc] bg-[#3d2314] px-3 py-1 rounded-full border border-[#d49a53]/30 uppercase">
+                    <span className="font-label-sm text-[11px] font-bold text-[#f7e1bc] bg-[#1e2029] px-3 py-1 rounded-full border border-[#d49a53]/30 uppercase">
                       {item.tag}
                     </span>
                   </div>
@@ -85,12 +113,12 @@ export const ResultsPillars = () => {
                   <h3 className="font-headline-sm text-xl text-white font-bold mb-3 group-hover:text-[#f7e1bc] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="font-body-md text-sm text-[#d6c4b2] leading-relaxed">
+                  <p className="font-body-md text-sm text-[#a1a1aa] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-[#4a2c1a]/40 flex items-center justify-between text-[#d49a53] font-label-sm text-xs">
+                <div className="mt-8 pt-4 border-t border-[#262933] flex items-center justify-between text-[#d49a53] font-label-sm text-xs">
                   <span className="font-semibold tracking-wide">Estándar Romero Labs</span>
                   <CheckCircle className="w-4 h-4 text-[#f7e1bc]" />
                 </div>

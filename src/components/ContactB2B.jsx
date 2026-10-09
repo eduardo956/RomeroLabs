@@ -1,63 +1,9 @@
 import React, { useState } from 'react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
-import { Send, CheckCircle2, Building2, User, Mail, Phone, MessageSquare, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { whatsappConfig } from '../config/whatsappConfig';
 
 export const ContactB2B = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    message: '',
-    services: {
-      software: true,
-      web: true,
-      mobile: false,
-      branding: false,
-      paidMedia: false,
-    }
-  });
-
-  const handleCheckboxChange = (serviceKey) => {
-    setFormData((prev) => ({
-      ...prev,
-      services: {
-        ...prev.services,
-        [serviceKey]: !prev.services[serviceKey],
-      }
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const selectedServicesList = Object.entries(formData.services)
-      .filter(([_, active]) => active)
-      .map(([key]) => {
-        const labels = {
-          software: 'Desarrollo de Software',
-          web: 'Diseño Web',
-          mobile: 'Desarrollo Móvil',
-          branding: 'Branding & Identidad',
-          paidMedia: 'Paid Media & SEO',
-        };
-        return labels[key] || key;
-      })
-      .join(', ');
-
-    const textMsg = `Hola Romero Labs! Mi nombre es ${formData.name || 'Cliente'}${
-      formData.company ? ` de ${formData.company}` : ''
-    }.
-Servicios de interés: ${selectedServicesList || 'Consulta general'}.
-Correo: ${formData.email || 'No especificado'} | Teléfono: ${formData.phone || 'No especificado'}
-Mensaje: ${formData.message || 'Deseo cotizar un proyecto digital.'}`;
-
-    window.open(
-      `https://wa.me/${whatsappConfig.phoneNumber}?text=${encodeURIComponent(textMsg)}`,
-      '_blank'
-    );
-  };
-
   return (
     <section className="w-full bg-[#090a0f] py-24 border-t border-[#262933] relative" id="contacto">
       <div className="max-w-[1280px] mx-auto px-5 md:px-12">

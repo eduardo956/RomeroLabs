@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Ticker } from './components/Ticker';
 import { ResultsPillars } from './components/ResultsPillars';
 import { Portfolio } from './components/Portfolio';
 import { Catalog } from './components/Catalog';
@@ -16,7 +15,7 @@ import { ParallaxBackground } from './components/ParallaxBackground';
 import { CartProvider } from './context/CartContext';
 import { ToastProvider } from './context/ToastContext';
 import { ModalProvider } from './context/ModalContext';
-import { ChevronDown, HelpCircle, AlertTriangle, CheckCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { WhatsAppIcon } from './components/icons/WhatsAppIcon';
 import { whatsappConfig } from './config/whatsappConfig';
 
@@ -70,10 +69,10 @@ function App() {
               {/* 1. Hero Section */}
               <Hero />
 
-              {/* 3. Resultados que te Impulsan (Feature pillars) */}
+              {/* 2. Resultados que te Impulsan (Feature pillars) */}
               <ResultsPillars />
 
-              {/* Proyectos / Portafolio */}
+              {/* 3. Proyectos / Portafolio */}
               <Portfolio />
 
               {/* 4. Packages Section (Ofertas / Precios Transparentes) */}
@@ -106,11 +105,11 @@ function App() {
                   {faqs.map((faq, idx) => (
                     <div
                       key={idx}
-                      className="bg-[#14151a] border border-[#262933] rounded-xl overflow-hidden transition-all duration-300"
+                      className="bg-[#14151a] border border-[#262933] hover:border-[#d49a53]/40 rounded-xl overflow-hidden transition-all duration-300"
                     >
                       <button
                         onClick={() => toggleFaq(idx)}
-                        className="w-full p-6 text-left flex items-center justify-between gap-4 font-headline-sm text-base md:text-lg font-bold text-white hover:text-[#d49a53] transition-colors"
+                        className="w-full p-6 text-left flex items-center justify-between gap-4 font-headline-sm text-base md:text-lg font-bold text-white hover:text-[#f7e1bc] transition-colors"
                       >
                         <span>{faq.q}</span>
                         <ChevronDown
@@ -174,7 +173,7 @@ function App() {
                 className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d49a53] to-[#f7e1bc] text-[#090a0f] flex items-center justify-center shadow-[0_0_25px_rgba(212,154,83,0.5)] transition-transform hover:scale-110 relative"
               >
                 <WhatsAppIcon className="w-7 h-7 fill-current" />
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border border-black flex items-center justify-center text-[10px] text-black font-extrabold">
+                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#d49a53] border border-black flex items-center justify-center text-[10px] text-black font-extrabold">
                   1
                 </span>
               </a>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useToast } from '../context/ToastContext';
-import { ShoppingBag, X, CheckCircle2 } from 'lucide-react';
+import { X, CheckCircle2 } from 'lucide-react';
 
 export const ToastContainer = () => {
   const { toasts, removeToast } = useToast();
@@ -12,11 +12,11 @@ export const ToastContainer = () => {
       {toasts.map((toast) => (
         <div
           key={toast.id}
-          className="pointer-events-auto bg-[#0e1617]/95 border-2 border-[#00f0d4] text-white p-4 rounded-xl shadow-[0_10px_30px_rgba(0,240,212,0.3)] backdrop-blur-xl flex items-center justify-between gap-3 animate-toast"
+          className="pointer-events-auto bg-[#14151a]/95 border-2 border-[#d49a53] text-white p-4 rounded-xl shadow-[0_10px_30px_rgba(212,154,83,0.3)] backdrop-blur-xl flex items-center justify-between gap-3 animate-toast"
         >
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#00f0d4]/20 text-[#00f0d4] flex items-center justify-center shrink-0">
-              <CheckCircle2 className="w-5 h-5" />
+            <div className="w-8 h-8 rounded-lg bg-[#d49a53]/20 text-[#f7e1bc] flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-5 h-5 text-[#d49a53]" />
             </div>
             <p className="font-body-sm text-xs sm:text-sm font-semibold text-white">
               {toast.message}
